@@ -3,5 +3,6 @@ from .models import Image, Location, Category
 # Create your views here.
 
 def home(request):
-    
-    return render(request, 'main/home.html')
+    images = Image.get_images()
+    locations = Location.objects.all()
+    return render(request, 'main/home.html', {'images':images, 'locations':locations})
