@@ -2,15 +2,16 @@
 {% load static %}
 {% block content %}
 <!-- Start of Hero Section -->
-<div class="container-fluid ">
-    <div class="container mt-5 ">
-        <img class="img-fluid float-sm-end float-md-end float-lg-end " src="{% static 'images/group.png' %}" alt="hero photo">
-        <div class="float-sm-start float-md-start float-lg-start intro ">
+<div class="container">
+    <div class="container mt-5 justify-content-md-between hero h-100">
+        <img class="img-fluid float-sm-start float-md-end float-lg-end hero-pic " src="{% static 'images/group.png' %}" alt="hero photo">
+        <div class="float-sm-end float-md-start float-lg-start mt-lg-5 mt-md-5 mt-5 ">
             
-            <h3 class="mt-lg-5 mt-md-5 mt-sm-5">Welcome to Gallery</h3>
-            <p>Collection of Photos and Images from differnt locations<i class="bi bi-emoji-sunglasses"></i></p>
-           
+            <h2 class="mt-lg-5 mt-md-5 mt-sm-5 intro">Welcome to <span class="brand">Gallery</span> </h2>
+            <h3 class="intro">Collection of <span class="detail">Photos</span>  and <i class="bi bi-emoji-sunglasses"></i></h3>
+           <h3 class="intro"><span class="detail">Images</span>  from different locations</h3>
         </div>
+        
     </div>
 </div>
 <!--   End of Hero Section   -->

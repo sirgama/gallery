@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700&family=Smooch&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@400;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700&family=Smooch&display=swap');
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -14,4 +13,24 @@
 }
 h4{
     color: blue;
+}
+.intro{
+    font-size: 35px;
+   font-weight: bold;
+    color: rgb(11, 8, 65);
+}
+.brand{
+    font-family: 'Smooch', cursive;
+    font-size: 40px;
+    font-weight: 600;
+    color: #f20495;
+}
+.detail{
+    font-size: 40px;
+    border-bottom: 10px dotted #f20495 ;
+   font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+.hero-pic{
+    max-width: 90%;
 }
