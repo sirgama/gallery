@@ -1,9 +1,10 @@
 {% extends 'main/base.html' %}
+
 {% load static %}
 {% block content %}
 <!-- Start of Hero Section -->
-<div class="container">
-    <div class="container mt-5 justify-content-md-between hero h-100">
+<div class="container hero">
+    <div class="container mt-5 justify-content-md-between  h-100">
         <img class="img-fluid float-sm-start float-md-end float-lg-end hero-pic " src="{% static 'images/group.png' %}" alt="hero photo">
         <div class="float-sm-end float-md-start float-lg-start mt-lg-5 mt-md-5 mt-5 ">
             
@@ -28,5 +29,8 @@
     </div>
 </div>
 <!--   End of Hero Section   -->
+
+{% include 'main/gallery.html' %}
+
 
 {% endblock %}
