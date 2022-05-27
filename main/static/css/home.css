@@ -8,6 +8,10 @@
     font-size: 25px;
     font-weight: 500;
 }
+.nav-link{
+    font-weight: bolder;
+    color: rgb(39, 39, 39);
+}
 h4{
     color: blue;
 }

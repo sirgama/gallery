@@ -1,6 +1,18 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block content %}
-<h4>Hello</h4>
+<!-- Start of Hero Section -->
+<div class="container-fluid ">
+    <div class="container mt-5 ">
+        <img class="img-fluid float-sm-end float-md-end float-lg-end " src="{% static 'images/group.png' %}" alt="hero photo">
+        <div class="float-sm-start float-md-start float-lg-start intro ">
+            
+            <h3 class="mt-lg-5 mt-md-5 mt-sm-5">Welcome to Gallery</h3>
+            <p>Collection of Photos and Images from differnt locations<i class="bi bi-emoji-sunglasses"></i></p>
+           
+        </div>
+    </div>
+</div>
+<!--   End of Hero Section   -->
 
 {% endblock %}
