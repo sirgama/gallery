@@ -14,7 +14,7 @@
                 {% for image in images %}
                 <div class="col">
                   <div class="card ">
-                    <img src="{{image.main_image.url}}" class="card-img-top img-responsive"  style="height: 15rem;"  alt="{{image.image_name}}"/>
+                    <img src="{{image.main_image.url}}" class="card-img-top img-responsive" data-mdb-toggle="modal" data-mdb-target="#exampleModal"  style="height: 15rem;"  alt="{{image.image_name}}"/>
                     
                   </div>
                 </div>
