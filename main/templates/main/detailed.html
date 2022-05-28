@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="container ">
+    <div class="row mt-5 ">
+        <div class="col-md-8">
+            <img class="img-fluid rounded " src="{{image.main_image.url}}" alt="hero photo">
+        </div>
+        <div class="col-md-4 mt-lg-5 mt-md-5 mt-5 ">
+            <h6 class="intro">Image name: </h6>
+            <h6 class="intro"> Description</h6>
+           <h6 class="intro">Image Location:   Category: </h6>
+           
+        </div>
+       
+    </div>
+</div>
+
+
+
+{% endblock %}

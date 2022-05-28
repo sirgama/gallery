@@ -13,15 +13,8 @@
 
               <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
                 {% for image in images %}
-                <!-- <div class="col card">
-                  <div class="">
-                    <img src="" class="card-img-top img-responsive" data-mdb-toggle="modal" data-mdb-target="#{{image.id}}"  style="height:15rem;"  alt="{{image.image_name}}"/>
-                    <a href=""data-toggle="modal" data-target="#myModal{{ forloop.counter }}"> </a>
-                  </div>
-                </div> -->
-
-                <!-- Image with violet mask -->
-<div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
+               
+<a href="{% url 'detailed' image.id %}"><div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
   <img
     src="{{image.main_image.url}}"
     class="w-100 h-100 "
@@ -58,7 +51,7 @@
      
     </div>
   </div>
-</div>
+</div></a>
 
 
 
