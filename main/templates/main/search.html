@@ -3,11 +3,13 @@
 {% load static %}
 {% block content %}
 
-<div class="container mt-5">
-    {% if imaages %}
-    <h3 class="intro text-center">Found {{ images|length }} images from the search term {{message}}</h3>
+<div class="container mt-5 h-50">
+    {% if images %}
+    <h3 class="intro text-center mt-md-5 mt-lg-5 mb-md-5">Found {{ images|length }} images from the search term {{message}}</h3>
     {% else %}
-    <h3 class="intro text-center">Hey, this is what we found from the seached term {{message}}</h3>
+    <div style="height: 50vh;">
+    <h3 class="intro text-center mt-md-5 mt-lg-5 mb-md-5">Hey, Sorry we couldn't find anything from the seached term {{message}} :(</h3>
+    </div>
     {% endif %}
 </div>
 
@@ -15,24 +17,74 @@
 
 
 
-<div class="container-fluid gallery-section mt-5">
     
-    <div class="container-fluid">
-        <div class="container">
+        
       
             
 
-              <div class="row row-cols-1 row-cols-md-3 g-4">
-                {% if images %}
-                {% for image in images %}
-                <div class="col">
-                  <div class="card ">
-                    <img src="{{image.main_image.url}}" class="card-img-top img-responsive"  style="height: 15rem;"  alt="{{image.image_name}}"/>
-                    
-                  </div>
-                </div>
-                {% endfor %}
-                {% endif %}
-              </div>
+<div class="container-fluid">
+      
+            
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-md-5 mt-lg-5">
+    {% if images %}
+    {% for image in images %}
+    
+
+    <!-- Image with violet mask -->
+<div class=" bg-image rounded-6 masking bg3 m-md-4 mt-md-5 mt-lg-5" style="cursor: pointer;">
+<img
+src="{{image.main_image.url}}"
+class="w-100 h-100 bg3"
+alt="Alternative text"
+style="border-radius: 10px; width:auto;"
+/>
+<!-- Mask -->
+<div
+class="mask bg3"
+style="
+background: linear-gradient(
+to bottom,
+hsla(0, 0%, 0%, 0),
+hsla(307, 82%, 24%, 0.55)
+);
+"
+>
+<div
+class="
+bottom-0
+d-flex
+align-items-end
+h-100
+text-center
+justify-content-center
+"
+>
+<div class="col">
+
+<div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-map-location-dot"></i> Location: {{image.location.name}} </small></p></div>
+<div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-font-awesome"></i> Category: {{image.category.title}}</small></p></div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+    
+    {% endfor %}
+    {% endif %}
+  </div>
+
+
+
+
+
+</div>
 
 {% endblock %}
