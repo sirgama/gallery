@@ -6,3 +6,4 @@ def home(request):
     images = Image.get_images()
     locations = Location.objects.all()
     return render(request, 'main/home.html', {'images':images, 'locations':locations})
+

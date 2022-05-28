@@ -64,15 +64,16 @@
                 <a class="nav-link " href="#">About Gallery</a>
               </li>
             </ul>
-            <form class="d-flex input-group w-auto form-search">
+            <form class="d-flex input-group w-auto form-search" role="search" action="{% url 'search_results' %}">
                 <input
-                  type="search"
+                  type="text"
                   class="form-control rounded"
-                  placeholder="Search"
+                  placeholder="Search: Trending children, photography "
                   aria-label="Search"
+                  name="image"
                   aria-describedby="search-addon"
                 />
-                <span class="input-group-text border-0" id="search-addon">
+                <span class="input-group-text border-0" type="submit" id="search-addon">
                   <i class="fas fa-search"></i>
                 </span>
               </form>
