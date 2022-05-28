@@ -20,16 +20,16 @@
                 </div> -->
 
                 <!-- Image with violet mask -->
-<div class="col bg-image rounded-6 masking bg3 m-md-3">
+<div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
   <img
     src="{{image.main_image.url}}"
-    class="w-100 h-100 "
+    class="w-100 h-100 bg3"
     alt="Alternative text"
-    style="border-radius: 10px;"
+    style="border-radius: 10px; width:auto;"
   />
   <!-- Mask -->
   <div
-  class="mask"
+  class="mask bg3"
   style="
     background: linear-gradient(
       to bottom,
@@ -48,10 +48,13 @@
         justify-content-center
       "
     >
-      <div>
-        <h5 class="fw-bold text-white mb-4 btn3">{{image.image_name}}</h5>
-       
+      <div class="col">
+        
+        <div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-map-location-dot"></i> Location: {{image.location.name}} </small></p></div>
+        <div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-font-awesome"></i> Category: {{image.category.title}}</small></p></div>
+
       </div>
+     
     </div>
   </div>
 </div>
