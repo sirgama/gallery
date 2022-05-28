@@ -24,7 +24,7 @@ def search_results(request):
     
 
 class Imager(TemplateView):
-    template_name = 'base.html'
+    template_name = 'main/gallery.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["imagelist"] = Image.objects.all()

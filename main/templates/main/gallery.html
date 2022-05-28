@@ -12,16 +12,65 @@
 
               <div class="row row-cols-1 row-cols-md-4 g-4">
                 {% for image in images %}
-                <div class="col card">
+                <!-- <div class="col card">
                   <div class="">
-                    <img src="{{image.main_image.url}}" class="card-img-top img-responsive" data-mdb-toggle="modal" data-mdb-target="#{{image.id}}"  style="height:15rem;"  alt="{{image.image_name}}"/>
-                    <a href=""></a><h5></h5>
+                    <img src="" class="card-img-top img-responsive" data-mdb-toggle="modal" data-mdb-target="#{{image.id}}"  style="height:15rem;"  alt="{{image.image_name}}"/>
+                    <a href=""data-toggle="modal" data-target="#myModal{{ forloop.counter }}"> </a>
                   </div>
-                </div>
+                </div> -->
+
+                <!-- Image with violet mask -->
+<div class="col bg-image rounded-6 masking bg3 m-md-3">
+  <img
+    src="{{image.main_image.url}}"
+    class="w-100 h-100 "
+    alt="Alternative text"
+    style="border-radius: 10px;"
+  />
+  <!-- Mask -->
+  <div
+  class="mask"
+  style="
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0),
+      hsla(307, 82%, 24%, 0.55)
+    );
+  "
+  >
+    <div
+      class="
+        bottom-0
+        d-flex
+        align-items-end
+        h-100
+        text-center
+        justify-content-center
+      "
+    >
+      <div>
+        <h5 class="fw-bold text-white mb-4 btn3">{{image.image_name}}</h5>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+                
                 {% endfor %}
               </div>
 
-              <a class='portfolio-wrap hovereffect' style='color:grey; text-decoration:none; ' data-toggle="modal" data-target="#myModal{{ forloop.counter }}">{{image.image_name}}   <span style='color:pink; text-decoration:none; '>   details</span> </a>
+
+
+
+
+</div>
+</div>
                      
 
 
@@ -35,4 +84,42 @@
         </div>
       </div>
 </div>
+
+
+
+
+
+
+{% for image in images %}
+<!-- Modal -->
+<div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-target="#{{image.id}}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Image details</h5>
+        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+              
+              
+                  <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"   alt="{{image.image_name}}"/>
+                  
+              
+              
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endfor %} 
+
 {% endblock %}
