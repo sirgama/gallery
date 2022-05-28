@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from .models import Image, Location, Category
 from django.views.generic.base import TemplateView
@@ -29,3 +30,10 @@ class Imager(TemplateView):
         context = super().get_context_data(**kwargs)
         context["imagelist"] = Image.objects.all()
         return context
+    
+def detailed(request, image_id):
+    try:
+        image = Image.objects.get(id = image_id)
+    except:
+        raise Http404()
+    return render(request, 'main/detailed.html', {'image':image})
