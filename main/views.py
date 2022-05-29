@@ -37,3 +37,11 @@ def detailed(request, image_id):
     except:
         raise Http404()
     return render(request, 'main/detailed.html', {'image':image})
+
+
+def location_filter(request, location):
+    all_locations = Location.objects.all()
+    a_location = Location.get_location_id(location)
+    images = Image.filter_by_location(location)
+    title = f'{a_location} Images'
+    return render(request, 'main/location.html', {'title':title, 'images':images, 'locations':all_locations, 'location':a_location})
