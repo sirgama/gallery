@@ -23,6 +23,17 @@ class Location(models.Model):
         return locate
 
 
+   
+    
+    
+    
+
+class Category(models.Model):
+    title = models.CharField(max_length=30)
+    
+    def __str__(self):
+        return self.title
+    
     @classmethod
     def get_category_id(cls, id):
         category = Category.objects.get( pk = id)
@@ -41,15 +52,6 @@ class Location(models.Model):
     def update_category(self, update):
         self.title = update
         self.save()
-    
-    
-    
-
-class Category(models.Model):
-    title = models.CharField(max_length=30)
-    
-    def __str__(self):
-        return self.title
     
     
 class Image(models.Model):
