@@ -14,7 +14,7 @@ class Location(models.Model):
         self.delete()
 
     def update_location(self, update):
-        self.location_name = update
+        self.name = update
         self.save()
 
     @classmethod
@@ -22,8 +22,15 @@ class Location(models.Model):
         locate = Location.objects.get(pk = id)
         return locate
 
+
+    @classmethod
+    def get_category_id(cls, id):
+        category = Category.objects.get( pk = id)
+        return category
+    
+    
     def __str__(self):
-        return self.location_name
+        return self.title
     
     def save_category(self):
         self.save()
@@ -32,13 +39,8 @@ class Location(models.Model):
         self.delete()
 
     def update_category(self, update):
-        self.category_name = update
+        self.title = update
         self.save()
-
-    @classmethod
-    def get_category_id(cls, id):
-        category = Category.objects.get( pk = id)
-        return category
     
     
     

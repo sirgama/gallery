@@ -55,7 +55,24 @@
                 <a class="nav-link " aria-current="page" href="{% url 'homepage' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="#">Locations</a>
+                <div class="dropdown">
+                  <p
+                    class="nav-link"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Locations
+                </p>
+                
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for location in locations %}
+                    <li><a class="dropdown-item nav-link" href="/location/{{location.id}}">{{location.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+               
               </li>
              
               <li class="nav-item">
