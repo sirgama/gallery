@@ -1,5 +1,8 @@
 # GALLERY
 
+<img src="./main/static/images/Screenshot_select-area_20220529192819.png">
+<img src="./main/static/images/Screenshot_select-area_20220529192839.png">
+
 ## Project Description
 
 Gallery is a Photo Gallery application showcasing a collection of pictures built using Python - Django.
