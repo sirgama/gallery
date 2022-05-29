@@ -4,9 +4,26 @@ from django.db import models
 # Create your models here.
 class Location(models.Model):
     name = models.CharField(max_length=30)
+    
     def __str__(self):
         return self.name
-    
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+    def update_location(self, update):
+        self.location_name = update
+        self.save()
+
+    @classmethod
+    def get_location_id(cls, id):
+        locate = Location.objects.get(pk = id)
+        return locate
+
+    def __str__(self):
+        return self.location_name
     
     
 
@@ -54,3 +71,6 @@ class Image(models.Model):
     def filter_by_location(cls, img_location):
         images_location = cls.objects.filter(location__id=img_location)
         return images_location
+
+    def __str__(self):
+        return self.image_name
