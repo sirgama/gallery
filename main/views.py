@@ -10,6 +10,11 @@ def home(request):
     categories = Category.objects.all()
     return render(request, 'main/home.html', {'images':images, 'categories': categories, "locations":locations})
 
+def about(request):
+    
+    return render(request, 'main/about.html')
+
+
 def search_results(request):
     locations = Location.objects.all()
     categories = Category.objects.all()
