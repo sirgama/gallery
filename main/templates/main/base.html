@@ -68,7 +68,7 @@
                 
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     {% for location in locations %}
-                    <li><a class="dropdown-item nav-link" href="/location/{{location.id}}">{{location.name}}</a></li>
+                    <li><a class="dropdown-item fw-bold" href="/location/{{location.id}}">{{location.name}}</a></li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -76,7 +76,7 @@
               </li>
              
               <li class="nav-item">
-                <a class="nav-link " href="#">About Gallery</a>
+                <a class="nav-link " href="{% url 'about' %}">About Gallery</a>
               </li>
             </ul>
             <form class="d-flex input-group w-auto form-search" role="search" action="{% url 'search_results' %}">

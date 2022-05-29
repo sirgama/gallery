@@ -34,6 +34,12 @@ h4{
    font-weight: bold;
     font-family: 'Dancing Script', cursive;
 }
+.detaill{
+    font-size: 30px;
+    
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
 .hero-pic{
     max-width: 100%;
 }
