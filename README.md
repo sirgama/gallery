@@ -21,43 +21,47 @@ To clone the repository, run:
 Then navigating to the cloned directory:
 
     cd gallery
-### Prerequisites
+## BDD
 
-Requirements for the software and other tools to build, test and run: 
-- asgiref==3.5.2
-- Django==4.0.4
-- Pillow==9.1.1
-- psycopg2==2.9.3
-- sqlparse==0.4.2
 
-### Setup Instructions
+### Prerequisite
+The Galleria project requires a prerequisite understanding of the following:
+- Django Framework
+- Python3.9
+- Postgres
+- Python virtualenv
 
-You'll first need to setup your virtual environment
+## Setup and installation
 
-Then install all project dependencies by running:
+#### Clone the Repo
+####  Activate virtual environment
+Activate virtual environment using python3.9 as default handler
+    `virtualenv -p /usr/bin/python3.9 genv && source genv/bin/activate`
+####  Install dependancies
+Install dependancies that will create an environment for the app to run `pip3 install -r requirements.txt`
+####  Create the Database
+    - psql
+    - CREATE DATABASE gallery;
+####  .env file
+Create .env file and paste paste the following filling where appropriate:
 
-    pip install -r requirements.txt
-
-Then do a migration
-
+    SECRET_KEY = '<Secret_key>'
+    DBNAME = 'gallery'
+    USER = '<Username>'
+    PASSWORD = '<password>'
+    DEBUG = True
+#### Run initial Migration
+    python3.9 manage.py makemigrations gallery
     python3.9 manage.py migrate
-
-Then start the server by running:
-
+#### Run the app
     python3.9 manage.py runserver
-
-## Running the tests
-
-How to run the automated tests for this application
-
-
-    python3.9 manage.py test gallery
+    Open terminal on localhost:8000
 
 ## Deployment
 
 The application is deployed on Heroku and is live on this link:
 
-[https://gallery-sg.herokuapp.com/](https://gallery-sg.herokuapp.com/)
+[https://gallery-s.herokuapp.com/](https://gallery-s.herokuapp.com/)
 
 ## Built With
 
