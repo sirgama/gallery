@@ -12,6 +12,21 @@ Gallery is a Photo Gallery application showcasing a collection of pictures built
 - They can also copy the link to a photo to paste at their discretion.
 - Users can search for photos based on categories.
 
+## BDD
+
+| Behavior            | Input                         | Output                        |
+| ------------------- | ----------------------------- | ----------------------------- |
+| View photos of interest | Scroll to see a gallery and click on picture | Displays a picture with name description and copy link for sharing |
+| Search a picture by category | Enter the category in the search input| Displays Images in the searched category |
+| View pictures by location | Click on location of interest from the Navbar | Displays Images of chosen location |
+| Copy Link to clipboard | Click on copy link button in the modal class | Copies link to clipboard |
+| View Single picture | Click on photo of interest then click on image | Displays a single page with details of the picture and related images |
+
+<br>
+
+
+
+
 ## Getting Started
 
 To clone the repository, run:
@@ -21,7 +36,6 @@ To clone the repository, run:
 Then navigating to the cloned directory:
 
     cd gallery
-## BDD
 
 
 ### Prerequisite
@@ -33,8 +47,7 @@ The Galleria project requires a prerequisite understanding of the following:
 
 ## Setup and installation
 
-#### Clone the Repo
-####  Activate virtual environment
+###  Activate virtual environment
 Activate virtual environment using python3.9 as default handler
     `virtualenv -p /usr/bin/python3.9 genv && source genv/bin/activate`
 ####  Install dependancies
@@ -81,7 +94,26 @@ of conduct, and the process for submitting pull requests to us.
 
 ## License
 
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
+MIT License
+
+Copyright (c) 2022 Gamaliel Sirengo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 
