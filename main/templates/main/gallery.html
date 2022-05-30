@@ -13,7 +13,7 @@
 
         <a href="{% url 'detailed' image.id %}">
           <div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
-            <img src="{{image.main_image.url}}" class="w-100 h-100 " alt="Alternative text"
+            <img src="{{image.main_image.url}}" class="w-100 h-100 " data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}" alt="Alternative text"
               style="border-radius: 10px; width:auto;" />
             <!-- Mask -->
             <div class="mask " style="
@@ -32,6 +32,7 @@
         justify-content-center
       ">
                 <div class="col">
+                
                   <!--         
         <div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-map-location-dot"></i> Location: {{image.location.name}} </small></p></div>
         <div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-font-awesome"></i> Category: {{image.category.title}}</small></p></div> -->
@@ -42,6 +43,8 @@
             </div>
           </div>
         </a>
+
+        
         {% endfor %}
       </div>
     </div>
@@ -53,23 +56,21 @@
 
 
 
+  <!-- Button trigger modal -->
 
 
-{% for image in images %}
 <!-- Modal -->
-<div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-  aria-hidden="true" data-target="#{{image.id}}">
+<div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Image details</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{image.image_name}}</h5>
         <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-        <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"
-          alt="{{image.image_name}}" />
-
+        <p>{{image.id}}</p>
+        <img src="{{image.main_image.url}}" class="w-100 h-100 " data-bs-toggle="modal" data-bs-target="#exampleModal{{image.image_name}}" alt="Alternative text"
+              style="border-radius: 10px; width:auto;" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
@@ -78,8 +79,11 @@
     </div>
   </div>
 </div>
+    
 
 
-{% endfor %}
+
+
+
 
 {% endblock %}

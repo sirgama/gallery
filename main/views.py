@@ -11,8 +11,8 @@ def home(request):
     return render(request, 'main/home.html', {'images':images, 'categories': categories, "locations":locations})
 
 def about(request):
-    
-    return render(request, 'main/about.html')
+    locations = Location.objects.all()
+    return render(request, 'main/about.html',{"locations":locations})
 
 
 def search_results(request):
@@ -37,16 +37,18 @@ class Imager(TemplateView):
         return context
     
 def detailed(request, image_id):
+    locations = Location.objects.all()
     try:
         image = Image.objects.get(id = image_id)
     except:
         raise Http404()
-    return render(request, 'main/detailed.html', {'image':image})
+    return render(request, 'main/detailed.html', {'image':image,"locations":locations})
 
 
 def location_filter(request, location):
+    locations = Location.objects.all()
     all_locations = Location.objects.all()
     a_location = Location.get_location_id(location)
     images = Image.filter_by_location(location)
     title = f'{a_location} Images'
-    return render(request, 'main/location.html', {'title':title, 'images':images, 'locations':all_locations, 'location':a_location})
+    return render(request, 'main/location.html', {'title':title, 'images':images, 'locations':all_locations, 'location':a_location,"locations":locations})

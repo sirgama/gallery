@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %} {% load static %} {% block content %}
+{% extends 'main/base.html' %} {% load static %} {% block content %}{% include 'main/navbar.html' %} 
 
 <div class="container mt-5 h-50">
   <h5 class="intro text-center">
@@ -15,7 +15,7 @@
     {% for image in images %}
 
     <!-- Image with violet mask -->
-    <a href="{% url 'detailed' image.id %}"></a>
+    <a href="{% url 'detailed' image.id %}">
       <div class="bg-image rounded-6 masking bg3 m-md-4 mt-md-5 mt-lg-5" style="cursor: pointer">
         <img src="{{image.main_image.url}}" class="w-100 h-100 bg3" alt="Alternative text"
           style="border-radius: 10px; width: auto" />

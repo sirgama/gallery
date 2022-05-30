@@ -28,48 +28,6 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <a class="navbar-brand" href="{% url 'homepage' %}">
-        <img src="{% static 'images/logo.png' %}" height="30" alt="Gallery Logo" loading="lazy" />Gallery
-      </a>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="{% url 'homepage' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <p class="nav-link" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
-                aria-expanded="false">
-                Locations
-              </p>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                {% for location in locations %}
-                <li><a class="dropdown-item fw-bold" href="/location/{{location.id}}">{{location.name}}</a></li>
-                {% endfor %}
-              </ul>
-            </div>
-
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="{% url 'about' %}">About Gallery</a>
-          </li>
-        </ul>
-        <form class="d-flex input-group w-auto form-search" role="search" action="{% url 'search_results' %}">
-          <input type="text" class="form-control rounded sch" placeholder="Search Gallery " aria-label="Search"
-            name="image" aria-describedby="search-addon" />
-
-        </form>
-      </div>
-    </div>
-  </nav>
 
 
 
@@ -89,40 +47,9 @@
 
 
 
-  {% for image in images %}
-  <!-- Modal -->
-  <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true" data-target="#{{image.id}}">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Image details</h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
 
 
-
-          <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"
-            alt="{{image.image_name}}" />
-
-
-
-
-
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  {% endfor %}
-
+  
 
 
 
