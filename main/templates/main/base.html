@@ -4,95 +4,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    {% block styles %}
-        <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    {% endblock %}
-    {% if title %}
-    <title>Gallery - {{title}}</title>
-    {% else %}
-    <title>Welcome to Gallery</title>
-    {% endif %}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  {% block styles %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  {% endblock %}
+  {% if title %}
+  <title>Gallery - {{title}}</title>
+  {% else %}
+  <title>Welcome to Gallery</title>
+  {% endif %}
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-          <a class="navbar-brand" href="{% url 'homepage' %}">
-            <img
-            src="{% static 'images/logo.png' %}"
-            height="30"
-            alt="Gallery Logo"
-            loading="lazy"
-          />Gallery
-          </a>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="{% url 'homepage' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <div class="dropdown">
-                  <p
-                    class="nav-link"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-mdb-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Locations
-                </p>
-                
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    {% for location in locations %}
-                    <li><a class="dropdown-item fw-bold" href="/location/{{location.id}}">{{location.name}}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-               
-              </li>
-             
-              <li class="nav-item">
-                <a class="nav-link " href="{% url 'about' %}">About Gallery</a>
-              </li>
-            </ul>
-            <form class="d-flex input-group w-auto form-search" role="search" action="{% url 'search_results' %}">
-                <input
-                  type="text"
-                  class="form-control rounded sch"
-                  placeholder="Search Gallery "
-                  aria-label="Search"
-                  name="image"
-                  aria-describedby="search-addon"
-                />
-                
-              </form>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="{% url 'homepage' %}">
+        <img src="{% static 'images/logo.png' %}" height="30" alt="Gallery Logo" loading="lazy" />Gallery
+      </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="{% url 'homepage' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <p class="nav-link" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+                aria-expanded="false">
+                Locations
+              </p>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for location in locations %}
+                <li><a class="dropdown-item fw-bold" href="/location/{{location.id}}">{{location.name}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'about' %}">About Gallery</a>
+          </li>
+        </ul>
+        <form class="d-flex input-group w-auto form-search" role="search" action="{% url 'search_results' %}">
+          <input type="text" class="form-control rounded sch" placeholder="Search Gallery " aria-label="Search"
+            name="image" aria-describedby="search-addon" />
+
+        </form>
+      </div>
+    </div>
+  </nav>
 
 
 
@@ -104,17 +81,18 @@
 
 
 
-   
-        {% block content %}
-        {% endblock %}
-  
-        {% include 'main/footer.html' %}
-     
+
+  {% block content %}
+  {% endblock %}
+
+  {% include 'main/footer.html' %}
+
 
 
   {% for image in images %}
   <!-- Modal -->
-  <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-target="#{{image.id}}">
+  <div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-target="#{{image.id}}">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -123,12 +101,13 @@
         </div>
         <div class="modal-body">
 
-                
-                
-                    <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"   alt="{{image.image_name}}"/>
-                    
-                
-                
+
+
+          <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"
+            alt="{{image.image_name}}" />
+
+
+
 
 
 
@@ -142,7 +121,7 @@
   </div>
 
 
-{% endfor %} 
+  {% endfor %}
 
 
 
@@ -156,12 +135,12 @@
 
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/d3js/7.4.2/d3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/d3js/7.4.2/d3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

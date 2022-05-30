@@ -1,85 +1,53 @@
-
 {% load static %}
 
 {% block gallery %}
 
 <div class="container-fluid gallery-section mb-5">
-    <h5 class=" intro text-center">Popular images from<span class="brand"> Gallery</span></h5>
-    <p class=" text-muted text-center"><span class="fw-bold"> Trending: </span> Gaming, Photography, Tech, Parenting, Children, Fashion</p>
+  <h5 class=" intro text-center">Popular images from<span class="brand"> Gallery</span></h5>
+  <p class=" text-muted text-center"><span class="fw-bold"> Trending: </span> Gaming, Photography, Tech, Parenting,
+    Children, Fashion</p>
+  <div class="container-fluid">
     <div class="container-fluid">
-        <div class="container-fluid">
-      
-            
+      <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+        {% for image in images %}
 
-              <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
-                {% for image in images %}
-               
-<a href="{% url 'detailed' image.id %}"><div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
-  <img
-    src="{{image.main_image.url}}"
-    class="w-100 h-100 "
-    alt="Alternative text"
-    style="border-radius: 10px; width:auto;"
-  />
-  <!-- Mask -->
-  <div
-  class="mask "
-  style="
+        <a href="{% url 'detailed' image.id %}">
+          <div class=" bg-image rounded-6 masking bg3 m-md-4" style="cursor: pointer;">
+            <img src="{{image.main_image.url}}" class="w-100 h-100 " alt="Alternative text"
+              style="border-radius: 10px; width:auto;" />
+            <!-- Mask -->
+            <div class="mask " style="
     background: linear-gradient(
       to bottom,
       hsla(0, 0%, 0%, 0),
       hsla(307, 82%, 24%, 0.55)
     );
-  "
-  >
-    <div
-      class="
+  ">
+              <div class="
         bottom-0
         d-flex
         align-items-end
         h-100
         text-center
         justify-content-center
-      "
-    >
-      <div class="col">
-<!--         
+      ">
+                <div class="col">
+                  <!--         
         <div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-map-location-dot"></i> Location: {{image.location.name}} </small></p></div>
         <div class="row"><p class="fw-bold text-white mb-1 btn3"><small><i class="fa-solid fa-font-awesome"></i> Category: {{image.category.title}}</small></p></div> -->
 
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
       </div>
-     
     </div>
   </div>
-</div></a>
-
-
-
-
-
-
-                
-                {% endfor %}
-              </div>
-
-
-
-
-
 </div>
 </div>
-                     
-
-
-
-
-
-
-
-
-
-        </div>
-      </div>
 </div>
 
 
@@ -89,7 +57,8 @@
 
 {% for image in images %}
 <!-- Modal -->
-<div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-target="#{{image.id}}">
+<div class="modal fade" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" data-target="#{{image.id}}">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -98,14 +67,8 @@
       </div>
       <div class="modal-body">
 
-              
-              
-                  <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"   alt="{{image.image_name}}"/>
-                  
-              
-              
-
-
+        <img id="{{image.id}}" src="{{image.main_image}}" class="card-img-top img-responsive"
+          alt="{{image.image_name}}" />
 
       </div>
       <div class="modal-footer">
@@ -117,6 +80,6 @@
 </div>
 
 
-{% endfor %} 
+{% endfor %}
 
 {% endblock %}
